@@ -1,64 +1,23 @@
-#!/bin/bash
+jdlirjjjfnnvldsjdssdksldkslm kknoneioieoiwefjkfdjfdjfkdjfklldkvkjlfldldkjjojjjfjjjjrjjjjfkdddddddddddddddddddddjjjjjjjjjjjfffffkkkdddd,,,,,,,sssskkkkffffffffffffhhhhhdjjjjd
+bjdhhhhhhdoooosssslllllllllllsssss..../cldjjjjjjjjdnnnnnncccccccccccccnnnnnnnnncggduuuuufoooo
+hhhhhhhhhhhhhhhhhhhhhh
+jjjjjjjjjjjjsssssssssssskk
+xxxxxxxxxxxxxxxxxxkkkkkkkkkkkkkkvvvvv
+nnnnnnnnnnnnnnnnnnnnnnnnnnnnxxxxx......;c
 
-author=233boy
-# github=https://github.com/233boy/v2ray
 
-# bash fonts colors
-red='\e[31m'
-yellow='\e[33m'
-gray='\e[90m'
-green='\e[92m'
-blue='\e[94m'
-magenta='\e[95m'
-cyan='\e[96m'
-none='\e[0m'
-_red() { echo -e ${red}$@${none}; }
-_blue() { echo -e ${blue}$@${none}; }
-_cyan() { echo -e ${cyan}$@${none}; }
-_green() { echo -e ${green}$@${none}; }
-_yellow() { echo -e ${yellow}$@${none}; }
-_magenta() { echo -e ${magenta}$@${none}; }
-_red_bg() { echo -e "\e[41m$@${none}"; }
 
-is_err=$(_red_bg 错误!)
-is_warn=$(_red_bg 警告!)
 
-err() {
-    echo -e "\n$is_err $@\n" && exit 1
-}
 
-warn() {
-    echo -e "\n$is_warn $@\n"
-}
 
-# root
-[[ $EUID != 0 ]] && err "当前非 ${yellow}ROOT用户.${none}"
 
-# yum or apt-get, ubuntu/debian/centos
-cmd=$(type -P apt-get || type -P yum)
-[[ ! $cmd ]] && err "此脚本仅支持 ${yellow}(Ubuntu or Debian or CentOS)${none}."
 
-# systemd
-[[ ! $(type -P systemctl) ]] && {
-    err "此系统缺少 ${yellow}(systemctl)${none}, 请尝试执行:${yellow} ${cmd} update -y;${cmd} install systemd -y ${none}来修复此错误."
-}
 
-# wget installed or none
-is_wget=$(type -P wget)
 
-# x64
-case $(uname -m) in
-amd64 | x86_64)
-    is_core_arch="64"
-    ;;
-*aarch64* | *armv8*)
-    is_core_arch="arm64-v8a"
-    ;;
+ccccccccccnnnnkssssfffhhhhhhddddkkkkkksllxxxx,cccmmmmmmmmmmm
+
 *)
-    err "此脚本仅支持 64 位系统..."
-    ;;
-esac
-
+ 
 is_core=v2ray
 is_core_name=V2Ray
 is_core_dir=/etc/$is_core
@@ -161,15 +120,26 @@ download() {
         [[ $is_core_ver ]] && link="https://github.com/${is_core_repo}/releases/download/${is_core_ver}/${is_core}-linux-${is_core_arch}.zip"
         name=$is_core_name
         tmpfile=$tmpcore
-        is_ok=$is_core_ok
-        ;;
-    sh)
-        link=https://github.com/${is_sh_repo}/releases/latest/download/code.zip
-        name="$is_core_name 脚本"
-        tmpfile=$tmpsh
-        is_ok=$is_sh_ok
-        ;;
-    esac
+    vmess://eyJhZGQiOiIwa3hlZG0xeDhxOGxrc21qMTYueGluZ2JheXVuLmJ1enoiLCJhaWQiOjAsImhvc3QiOiJ3d3cubWljcm9zb2Z0LmNvbSIsImlkIjoiMTMyMDk5N2QtNjgzOC00ZGE5LThmYWYtYmQxMGNlYzY4ZmI2IiwibmV0Ijoid3MiLCJwYXRoIjoiL3poLWNuIiwicG9ydCI6NDQzLCJwcyI6Ilx1N0Y4RVx1NTZGRCBNZXJpdFx1N0Y1MVx1N0VEQ1x1NTE2Q1x1NTNGOCIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6Mn0=
+vmess://eyJhZGQiOiJ1cy13ZXN0LmxuYXNwaXJpbmcuY29tIiwiYWlkIjowLCJob3N0IjoiZGg2bzEzZm0xYTBidi5jbG91ZGZyb250Lm5ldCIsImlkIjoiMTVmZmVkZTYtNTJmYy00MzM2LTlhMTQtZmFkZmQzNmYxOTJmIiwibmV0Ijoid3MiLCJwYXRoIjoiL2NvY28vMTUiLCJwb3J0Ijo4MCwicHMiOiJcdTdGOEVcdTU2RkQgVjJDUk9TUy5DT00iLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOjJ9
+vmess://eyJhZGQiOiIxODUuMTYyLjIyOC4yMjkiLCJhaWQiOjAsImhvc3QiOiJvcGxnMS56aHVqaWNuMi5jb20iLCJpZCI6IjU2YTIxODhiLTJhYjctNDAyYy1iOWI4LTM0ODQ3ZmRmMDk1OCIsIm5ldCI6IndzIiwicGF0aCI6Ii81UU5ST1NSViIsInBvcnQiOiI0NDMiLCJwcyI6Ilx1RDgzQ1x1RERGQVx1RDgzQ1x1RERGOCBfQU1fXHU0RTlBXHU3RjhFXHU1QzNDXHU0RTlBLT5cdUQ4M0NcdURERkFcdUQ4M0NcdURERjhfVVNfXHU3RjhFXHU1NkZEIiwidGxzIjoidGxzIiwidHlwZSI6Im5vbmUiLCJ2IjoyfQ==
+vmess://eyJhZGQiOiJzY2FsZXdheS42OTY5NjAueHl6IiwiYWlkIjowLCJob3N0IjoiIiwiaWQiOiJlMzU3Y2Q2My1mMWE1LTRjOGUtYzQyZS0yNmRhMTEyMDdmZWUiLCJuZXQiOiJ3cyIsInBhdGgiOiIvcm9vdC8iLCJwb3J0IjoiNDQzIiwicHMiOiJnaXRodWIuY29tL2ZyZWVmcSAtIFx1N0Y4RVx1NTZGRENsb3VkRmxhcmVcdTUxNkNcdTUzRjhDRE5cdTgyODJcdTcwQjkgMzkiLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoibm9uZSIsInYiOjJ9
+vmess://eyJhZGQiOiJjZi55eGpub2RlLmNvbSIsImFpZCI6MCwiaG9zdCI6ImJ1eXZtMS55eGpub2RlLmNvbSIsImlkIjoiMDljMWQzMmQtNDQ1OC00ZWJmLWIzNmQtNGRkNzMyYmFlM2FhIiwibmV0Ijoid3MiLCJwYXRoIjoiL3l4emJwIiwicG9ydCI6IjgwIiwicHMiOiJcdTdGOEVcdTU2RkQtMS40MU1CL3MoWW91dHViZTpcdTRFMERcdTgyNkZcdTY3OTcpIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoyfQ==
+vmess://eyJhZGQiOiJjZi5ub2FyaWVzLmRlIiwiYWlkIjowLCJob3N0IjoiYXpzdHUtaXQuaWlpby53aWtpIiwiaWQiOiI2N2M1Y2U0NS03YjQ4LTQ3M2UtYmYyNS1lNGM4MzBiMGVkMjQiLCJuZXQiOiJ3cyIsInBhdGgiOiIvYXJpZXM/ZWQ9MjA0OCIsInBvcnQiOiIyMDUyIiwicHMiOiJnaXRodWIuY29tL2ZyZWVmcSAtIFx1N0Y4RVx1NTZGRENsb3VkRmxhcmVcdTgyODJcdTcwQjkgMjQiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOjJ9
+vmess://eyJhZGQiOiIxMDQuMjUuOTYuMTcxIiwiYWlkIjowLCJob3N0IjoiR0hUeW9xckJabS5qYW5iYXJvb24uY29tIiwiaWQiOiIzZGU0ZWMyNy03NGI0LTQzZTMtYmYyMy0xOGU3MjZhYzgwYmMiLCJuZXQiOiJ3cyIsInBhdGgiOiIvUDZrcG41VUtHNDBNTkxLMiIsInBvcnQiOiI0NDMiLCJwcyI6ImdpdGh1Yi5jb20vZnJlZWZxIC0gXHU3RjhFXHU1NkZEQ2xvdWRGbGFyZVx1NTE2Q1x1NTNGOENETlx1ODI4Mlx1NzBCOSAyOCIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6Mn0=
+vmess://eyJhZGQiOiJjZi55eGpub2RlLmNvbSIsImFpZCI6MCwiaG9zdCI6ImJ1eXZtMi55eGpub2RlLmNvbSIsImlkIjoiMDljMWQzMmQtNDQ1OC00ZWJmLWIzNmQtNGRkNzMyYmFlM2FhIiwibmV0Ijoid3MiLCJwYXRoIjoiL3l4emJwIiwicG9ydCI6IjgwIiwicHMiOiJnaXRodWIuY29tL2ZyZWVmcSAtIFx1N0Y4RVx1NTZGRENsb3VkRmxhcmVcdTUxNkNcdTUzRjhDRE5cdTgyODJcdTcwQjkgNiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6Mn0=
+vmess://eyJhZGQiOiIxMDQuMjEuNTMuMzUiLCJhaWQiOjAsImhvc3QiOiJkcDMueXhqbm9kZS5jb20iLCJpZCI6IjA5YzFkMzJkLTQ0NTgtNGViZi1iMzZkLTRkZDczMmJhZTNhYSIsIm5ldCI6IndzIiwicGF0aCI6Ii95eHpicCIsInBvcnQiOjgwLCJwcyI6ImdpdGh1Yi5jb20vZnJlZWZxIC0gXHU3RjhFXHU1NkZEQ2xvdWRGbGFyZVx1NTE2Q1x1NTNGOENETlx1ODI4Mlx1NzBCOSAzNCIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6Mn0=
+vmess://eyJhZGQiOiIyMy4yMjcuMzguMTExIiwiYWlkIjowLCJob3N0IjoiMi5mcmVlazEueHl6IiwiaWQiOiIwMTJjNDU0OS0xN2QyLTQ3NWUtYjFjMS1hM2IxOWNmMzY2MjIiLCJuZXQiOiJ3cyIsInBhdGgiOiIvZG9uZ3RhaXdhbmcuY29tIiwicG9ydCI6IjQ0MyIsInBzIjoiZ2l0aHViLmNvbS9mcmVlZnEgLSBcdTdGOEVcdTU2RkRDbG91ZEZsYXJlXHU1MTZDXHU1M0Y4Q0ROXHU4MjgyXHU3MEI5KHNob3BpZnkpIDEwIiwidGxzIjoidGxzIiwidHlwZSI6Im5vbmUiLCJ2IjoyfQ==
+vmess://eyJhZGQiOiJjZi1sdC5zaGFyZWNlbnRyZS5vbmxpbmUiLCJhaWQiOjAsImhvc3QiOiJkcDMuc2Nwcm94eS50b3AiLCJpZCI6IjVmNzUxYzZlLTUwYjEtNDc5Ny1iYThlLTZmZmUzMjRhMGJjZSIsIm5ldCI6IndzIiwicGF0aCI6Ii9zaGlya2VyIiwicG9ydCI6IjgwIiwicHMiOiJnaXRodWIuY29tL2ZyZWVmcSAtIFx1N0Y4RVx1NTZGRENsb3VkRmxhcmVcdTgyODJcdTcwQjkgMTEiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOjJ9
+vmess://eyJhZGQiOiIxNzMuMjQ1LjQ5LjExNSIsImFpZCI6MCwiaG9zdCI6Inlsa3MudnRjc3MudG9wIiwiaWQiOiIyOTg1MzBkZi04NDE4LTRiYzYtYmZmMi1lZWVlNTk1YmY1Y2QiLCJuZXQiOiJ3cyIsInBhdGgiOiIvcXdlciIsInBvcnQiOjgwLCJwcyI6ImdpdGh1Yi5jb20vZnJlZWZxIC0gXHU3RjhFXHU1NkZEXHU1RjE3XHU1NDA5XHU1QzNDXHU0RTlBXHU1RERFXHU5NjNGXHU0RUMwXHU2NzJDTlYgTkVYVFx1NjU3MFx1NjM2RVx1NEUyRFx1NUZDMyAxMiIsInRscyI6IiIsInYiOjJ9
+vmess://eyJhZGQiOiI0NS4xNC4xNzQuMTUyIiwiYWlkIjowLCJob3N0IjoiZnIuNjYubm93LmNjIiwiaWQiOiI3MWNlY2MzZi1lMjc0LTQzZjUtODFhNy1hZjM3YjFlM2IxODUiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwicG9ydCI6ODAsInBzIjoiZ2l0aHViLmNvbS9mcmVlZnEgLSBcdTZCMjdcdTc2REYgIDE0IiwidGxzIjoiIiwidiI6Mn0=
+vmess://eyJhZGQiOiIxMDQuMjAuMTA3LjIzMSIsImFpZCI6MCwiaG9zdCI6Inlsa3MudnRjc3MudG9wIiwiaWQiOiIyOTg1MzBkZi04NDE4LTRiYzYtYmZmMi1lZWVlNTk1YmY1Y2QiLCJuZXQiOiJ3cyIsInBhdGgiOiIvcXdlciIsInBvcnQiOjgwLCJwcyI6ImdpdGh1Yi5jb20vZnJlZWZxIC0gXHU3RjhFXHU1NkZEQ2xvdWRGbGFyZVx1NTE2Q1x1NTNGOENETlx1ODI4Mlx1NzBCOSAxNiIsInRscyI6IiIsInR5cGUiOiJhdXRvIiwidiI6Mn0=
+vmess://eyJhZGQiOiIxMDQuMTguMS4xOTYiLCJhaWQiOjAsImhvc3QiOiJzc3JzdWIudjAzLnNzcnN1Yi5jb20iLCJpZCI6ImE1NzU2ODUzLTRhODAtNDY4YS1hZjYyLTEwNTY1OTE4ZjU4ZiIsIm5ldCI6IndzIiwicGF0aCI6Ii9hcGkvdjMvZG93bmxvYWQuZ2V0RmlsZSIsInBvcnQiOjgwLCJwcyI6ImdpdGh1Yi5jb20vZnJlZWZxIC0gXHU3RjhFXHU1NkZEQ2xvdWRGbGFyZVx1NTE2Q1x1NTNGOENETlx1ODI4Mlx1NzBCOSAxOCIsInRscyI6IiIsInYiOjJ9
+vmess://eyJhZGQiOiJuczEudjItdmlwLmZ1biIsImFpZCI6MCwiaG9zdCI6ImRlNS5pcnRlaC5mdW4iLCJpZCI6IjhhYmU5NDk2LTVlMjQtNGU0OS1iNTY2LWRjZjg2MTE2MDE3ZCIsIm5ldCI6IndzIiwicGF0aCI6Ii9pOTlMZ3ZTYXNsYnNQTExRUTdqNloiLCJwb3J0IjoiODAiLCJwcyI6ImdpdGh1Yi5jb20vZnJlZWZxIC0gXHU3RjhFXHU1NkZEQ2xvdWRGbGFyZVx1NTE2Q1x1NTNGOENETlx1ODI4Mlx1NzBCOSAxOSIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6Mn0=
+vmess://eyJhZGQiOiJtY2kuc2FpbnRpbmsuZXUub3JnIiwiYWlkIjowLCJob3N0IjoiNC5zYWludGluay5ldS5vcmciLCJpZCI6ImMyMjZkOWZhLWI1YTctNGY2ZS05NTMyLTUwMTM3Yzg5MzExZCIsIm5ldCI6IndzIiwicGF0aCI6Im5sMS52MnJheXNlcnYuY29tL3ZtZXNzIiwicG9ydCI6NDQzLCJwcyI6ImdpdGh1Yi5jb20vZnJlZWZxIC0gXHU3RjhFXHU1NkZEQ2xvdWRGbGFyZVx1NTE2Q1x1NTNGOENETlx1ODI4Mlx1NzBCOSAyMSIsInRscyI6InRscyIsInYiOjJ9
+vmess://eyJhZGQiOiIyMDMuMjMuMTA0LjE5MCIsImFpZCI6MCwiaG9zdCI6IkR1c3NlbGRvcmYua290aWNrLnNpdGUiLCJpZCI6IkVGNkVFNjk0LTNCMDctNEQwQS05OTU1LTA0M0ZEMjM1RjZEMyIsIm5ldCI6IndzIiwicGF0aCI6Ii9zcGVlZHRlc3QiLCJwb3J0Ijo0NDMsInBzIjoiZ2l0aHViLmNvbS9mcmVlZnEgLSBcdTZGQjNcdTU5MjdcdTUyMjlcdTRFOUFcdTYwODlcdTVDM0MgMjIiLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoiYXV0byIsInYiOjJ9
+vmess://eyJhZGQiOiIxMDQuMTguNzMuMTMzIiwiYWlkIjowLCJob3N0IjoidXh4LnZ0Y3NzLnRvcCIsImlkIjoiMGUyOTBjOTEtNjIwMi00YzgwLWIxNTEtN2Y0OTM3NTZiNGVkIiwibmV0Ijoid3MiLCJwYXRoIjoiL3F3ZXIiLCJwb3J0Ijo4MCwicHMiOiJnaXRodWIuY29tL2ZyZWVmcSAtIFx1N0Y4RVx1NTZGRENsb3VkRmxhcmVcdTUxNkNcdTUzRjhDRE5cdTgyODJcdTcwQjkgMjMiLCJ0bHMiOiIiLCJ2IjoyfQ==
+vmess://eyJhZGQiOiJ2dWsyLjBiYWQuY29tIiwiYWlkIjowLCJob3N0IjoiIiwiaWQiOiI5MjcwOTRkMy1kNjc4LTQ3NjMtODU5MS1lMjQwZDBiY2FlODciLCJuZXQiOiJ3cyIsInBhdGgiOiIvY2hhdCIsInBvcnQiOjQ0MywicHMiOiJnaXRodWIuY29tL2ZyZWVmcSAtIFx1ODJGMVx1NTZGRFx1NEYyNlx1NjU2Nkxpbm9kZVx1NjU3MFx1NjM2RVx1NEUyRFx1NUZDMyAyNCIsInRscyI6InRscyIsInR5cGUiOiJhdXRvIiwidiI6Mn0=   
 
     msg warn "下载 ${name} > ${link}"
     if _wget -t 3 -q -c $link -O $tmpfile; then
